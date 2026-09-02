@@ -1,0 +1,7 @@
+node_modules
+uploads
+media-processed
+.env
+.DS_Store
+.vscode
+*.log

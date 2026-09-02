@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Editor — Dawkins Construction</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header class="adm-header"><div class="wrap"><h1>Studio Admin — 2D Plan Editor</h1></div></header>
+  <main class="wrap">
+    <p class="muted">This editor stores uploads in-browser for demo purposes. Use 'Save .JSON' to export project files. Changes are local to this browser until you export or publish.</p>
+    <section>
+      <div class="panel">
+        <label>Upload images to Media Library<input id="fileUpload" type="file" accept="image/*" multiple /></label>
+        <div style="margin-top:8px"><button id="serverUploadBtn">Upload media to local server (optional)</button> <small style="color:#bfb6b1">Requires local upload server (see README_DEPLOY.md)</small></div>
+        <div id="gallery" class="gallery" aria-live="polite"></div>
+      </div>
+
+      <div class="panel">
+        <h3>Canvas tools & calibration</h3>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+          <button id="selectBtn">Select</button>
+          <button id="rectBtn">Rectangle</button>
+          <button id="lineBtn">Line</button>
+          <button id="measureBtn">Measure</button>
+          <button id="textBtn">Text</button>
+          <button id="deleteBtn">Delete</button>
+        </div>
+        <div style="margin-top:8px;display:flex;gap:8px;align-items:center">
+          <label>Grid size: <input id="gridSize" type="number" value="25" min="4" style="width:80px"></label>
+                  <label>Show grid: <input id="showGrid" type="checkbox" checked></label>
+                  <label>Snap to grid: <input id="snapToggle" type="checkbox" checked></label>
+                  <label>Pixels per unit: <input id="pxPerUnit" type="number" value="100" min="1" style="width:100px"></label>
+                  <label>Unit: <select id="unitSelect"><option value="ft">ft</option><option value="m">m</option><option value="px" selected>px</option></select></label>
+                </div>
+                <div style="margin-top:8px;display:flex;gap:8px;align-items:center">
+                  <label>Presets: </label>
+                  <button id="presetCabin">Cabin (1 ft = 100 px)</button>
+                  <button id="presetBarn">Barn (1 ft = 60 px)</button>
+                  <button id="presetSite">Site Plan (1 m = 30 px)</button>
+                </div>
+        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+          <button id="exportPng">Export PNG</button>
+          <button id="exportPdf">Export PDF</button>
+          <button id="saveJson">Save .JSON</button>
+          <input id="loadJson" type="file" accept="application/json" />
+          <button id="applyHero">Set selected image as Hero (local)</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <canvas id="editor" width="1200" height="700" aria-label="2D plan editor"></canvas>
+        <div class="hint">Tip: Click a thumbnail to add an image. Use Measure to add dimension lines calibrated to the chosen unit. Save JSON to keep a copy.</div>
+      </div>
+    </section>
+  </main>
+  <script src="editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "Dawkins Construction LLC",
+  "short_name": "Dawkins",
+  "description": "Owner-led construction and custom carpentry in Foster, Rhode Island—crafted with purpose and built to belong.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fbf8f0",
+  "theme_color": "#17392d",
+  "icons": [
+    {"src":"media/brand/douglas-fir-mark.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}
+  ]
+}

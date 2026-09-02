@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="200" viewBox="0 0 1200 200" preserveAspectRatio="none">
+  <!-- White silhouette shapes will act as the mask (opaque) when used as CSS mask-image -->
+  <g fill="#fff" stroke="none">
+    <path d="M0,180 L36,110 L68,150 L106,80 L150,140 L188,92 L226,148 L270,110 L320,170 L360,92 L402,154 L460,70 L520,150 L580,86 L640,170 L700,64 L756,152 L820,84 L880,158 L940,74 L1000,150 L1062,88 L1120,170 L1200,180 L1200,200 L0,200 Z" />
+  </g>
+</svg>

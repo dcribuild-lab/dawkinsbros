@@ -1,0 +1,8 @@
+Integration plan:
+1. Copy admin.html, admin.css, editor.js into the publish folder as admin.html, admin.css, editor.js.
+2. Add a CMS section in admin modal that loads the local admin editor via an iframe or link to admin.html.
+3. Implement localStorage-backed media library for demo (so uploads persist in browser until user clears) and add UI to replace site placeholders by selecting uploaded images.
+4. Add measurement calibration and grid/snapping in editor.js improvements.
+5. Run basic Lighthouse-like checks locally and suggest quick fixes.
+
+This is a demo integration only: production storage (S3, CDN) and server auth are left for later.

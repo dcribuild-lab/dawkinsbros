@@ -1,0 +1,11 @@
+{
+  "instructions": "Add each new project as media/projects/YYYY/MM-project-name/. Put photos in the order you want to show them: 01-before, 02-work, 03-finished.",
+  "projects": [
+    {"date":"2026-08-09","file":"projects/2026/20260809_185032_HDR5.jpg","status":"ready to name"},
+    {"date":"2026-04-22","file":"projects/2026/20260422_120643_HDR.jpg","status":"ready to name"},
+    {"date":"2020-03-10","file":"projects/2020/20200310_112629.jpg","status":"ready to name"},
+    {"date":"2017-08-10","file":"projects/2017/20170810_144600_HDR.jpg","status":"ready to name"},
+    {"date":"2017-08-09","file":"projects/2017/20170809_132244_HDR.jpg","status":"ready to name"},
+    {"date":"2017-05-19","file":"projects/2017/20170519_121129_HDR.jpg","status":"ready to name"}
+  ]
+}

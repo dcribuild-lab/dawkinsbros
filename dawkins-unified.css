@@ -1,0 +1,438 @@
+:root{
+  --forest:#203c31;
+  --forest-deep:#132a23;
+  --moss:#526247;
+  --paper:#eee6d5;
+  --paper-light:#f7f1e6;
+  --timber:#6f4329;
+  --walnut:#402719;
+  --copper:#b96f3f;
+  --brass:#d6ad62;
+  --ink:#24231f;
+  --serif:"Source Serif 4",Georgia,serif;
+  --sans:Manrope,Arial,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--forest-deep);overflow-x:hidden}
+body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65}
+body::before{content:none!important}
+.site-header{display:none!important}
+.progress{display:none!important}
+.skip-link{position:fixed;left:1rem;top:-5rem;z-index:200;background:var(--paper-light);color:var(--forest-deep);padding:.75rem 1rem;text-decoration:none}
+.skip-link:focus{top:1rem}
+main{position:relative;isolation:isolate;overflow:visible}
+h1,h2,h3,.trail-brand strong,.desk-card b,.collection-link b,.story-gallery-toggle,.footer-tools b{font-family:var(--serif)}
+.eyebrow{font:700 .72rem/1.2 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--copper);margin:0 0 1.2rem}
+
+/* Cabin hero */
+.hero{position:relative;display:block;width:100%;height:100svh;min-height:760px;max-height:1080px;overflow:hidden;background:#53624c}
+.hero-image{position:absolute;inset:0;height:100%;width:100%;overflow:hidden;background:#53624c}
+.hero-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 48%;filter:saturate(1.12) contrast(1.07) brightness(1.03);transform:none!important}
+.hero-image::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,31,25,.48) 0,rgba(17,31,25,.11) 46%,rgba(17,31,25,0) 72%),linear-gradient(0deg,rgba(14,26,21,.28),transparent 40%);pointer-events:none}
+.season-overlay{display:none}
+.hero-copy{position:absolute;z-index:4;left:6vw;bottom:7vh;width:min(620px,54vw);padding:0;color:var(--paper-light)}
+.hero h1{margin:0;font:700 clamp(3rem,5.5vw,6.2rem)/.9 var(--serif);letter-spacing:-.045em;color:#e1b66d;text-shadow:0 3px 1px #392719,0 0 26px rgba(255,241,201,.42)}
+.hero h1 em{font-style:normal;font-weight:600;color:#f2dfb5}
+.hero-intro{max-width:760px;margin:1.55rem 0 1.35rem;font:600 clamp(.95rem,1.15vw,1.15rem)/1.65 var(--sans);color:#fff0ce;text-shadow:0 2px 5px #17231f,0 0 18px #17231f}
+.hero .text-link{display:inline-flex;align-items:center;gap:.8rem;border:0;padding:0;color:#f5e2b8;text-decoration:none}
+.hero .text-link .action-mark{display:block;width:164px;height:102px;margin:0;background:var(--action-icon) center/contain no-repeat;filter:drop-shadow(0 4px 5px rgba(0,0,0,.45));transition:transform .25s ease}
+.hero .text-link:hover .action-mark,.hero .text-link:focus-visible .action-mark{transform:translateY(-4px) scale(1.035)}
+.hero .action-copy{display:grid;font:700 1.05rem var(--serif);letter-spacing:.02em;color:#f5e2b8!important;text-shadow:0 2px 4px #15231e}
+.hero .action-copy small{font:600 .72rem var(--sans);letter-spacing:.03em;color:#ead8b5;margin-top:.12rem}
+.hero .text-link>b{font-size:1.25rem;color:var(--brass)}
+.wildlife,.foot-fire{display:none!important}
+.distant-birds{position:absolute;z-index:3;left:-12vw;top:29%;width:100px;height:45px;pointer-events:none;opacity:0;animation:birdCrossing 26s linear 5s infinite}
+.distant-birds i{position:absolute;width:18px;height:8px;filter:drop-shadow(0 1px 1px rgba(255,255,255,.16));animation:wingGlide 2.2s ease-in-out infinite}
+.distant-birds i::before,.distant-birds i::after{content:"";position:absolute;top:1px;width:10px;height:6px;border-top:2px solid rgba(24,36,31,.78);border-radius:50%}
+.distant-birds i::before{left:0;transform:rotate(10deg)}
+.distant-birds i::after{right:0;transform:rotate(-10deg)}
+.distant-birds i:nth-child(2){left:33px;top:17px;scale:.75;animation-delay:-.7s}
+.distant-birds i:nth-child(3){left:62px;top:3px;scale:.55;animation-delay:-1.25s}
+@keyframes birdCrossing{0%,8%{opacity:0;transform:translateX(0) translateY(0)}12%{opacity:.72}76%{opacity:.58}88%,100%{opacity:0;transform:translateX(124vw) translateY(-34px)}}
+@keyframes wingGlide{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.68)}}
+
+/* Restrained chimney smoke, anchored to the cabin */
+.chimney-smoke{position:absolute;z-index:14;left:68.2%;top:0;width:150px;height:46%;pointer-events:none;filter:blur(2px);mix-blend-mode:screen}
+.chimney-smoke i{position:absolute;left:49px;bottom:0;width:12px;height:88px;border-radius:48% 52% 45% 55%;background:linear-gradient(0deg,rgba(236,237,229,.42),rgba(218,221,215,.24) 52%,transparent);opacity:0;animation:chimneyBillow 8.6s ease-out infinite;transform-origin:center bottom}
+.chimney-smoke i:nth-child(2){animation-delay:1.25s;left:52px}
+.chimney-smoke i:nth-child(3){animation-delay:2.6s;left:38px}
+.chimney-smoke i:nth-child(4){animation-delay:3.95s;left:55px}
+.chimney-smoke i:nth-child(5){animation-delay:5.25s;left:43px}
+@keyframes chimneyBillow{0%{opacity:0;transform:translate(0,0) scale(.48,.8)}10%{opacity:.52}48%{opacity:.3}100%{opacity:0;transform:translate(34px,-390px) scale(3.8,3.2) rotate(7deg)}}
+
+/* One rough-sawn header beam; no stacked boards */
+.trail-guide{position:absolute;z-index:10;top:0;left:0;width:100%;height:185px;display:flex;align-items:center;justify-content:center;padding:0;color:#f5dba6;background-color:#4b2b19;background-image:url("media/brand/dawkins-header-timber-full-v2.png");background-size:cover;background-repeat:no-repeat;background-position:center;filter:drop-shadow(0 8px 6px rgba(20,11,6,.4))}
+.trail-guide::before{content:none}
+.trail-brand{display:none}
+.trail-brand strong{font-size:clamp(1.25rem,1.75vw,2rem);line-height:1;letter-spacing:.08em;text-transform:uppercase;color:#e2b568}
+.trail-brand small{margin-top:.35rem;font:700 .73rem var(--sans);letter-spacing:.25em;text-transform:uppercase;color:#f2dfb3}
+.trail-menu{position:absolute;left:8px;top:0;width:210px;text-align:center;z-index:4}
+.trail-menu summary{list-style:none;cursor:pointer;display:grid;place-items:center;color:#f1d7a1;outline-offset:5px}
+.trail-menu summary::-webkit-details-marker{display:none}
+.trail-menu summary i{display:block;width:198px;height:154px;background:url("media/brand/integrated-cabin-v1.png") center/contain no-repeat;filter:drop-shadow(0 5px 5px rgba(0,0,0,.5));transition:transform .22s ease}
+.trail-menu summary:hover i,.trail-menu summary:focus-visible i{transform:translateY(-4px) scale(1.03)}
+.trail-menu summary b{margin-top:-34px;font:700 1.08rem var(--serif);letter-spacing:.08em;text-shadow:0 2px 2px #2c160c}
+.trail-menu>div{position:absolute;right:0;top:108px;width:210px;padding:1rem 1.15rem;display:grid;gap:.35rem;text-align:left;background:rgba(30,45,36,.96);border-radius:0 0 14px 14px;box-shadow:0 16px 30px rgba(0,0,0,.3)}
+.trail-menu:not([open])>div{display:none}
+.trail-menu:hover>div,.trail-menu:focus-within>div{display:grid}
+.trail-menu a{color:#f7e6c5;text-decoration:none;font:700 .9rem var(--serif);padding:.4rem .25rem;border-bottom:1px solid rgba(214,173,98,.18)}
+.trail-menu a:hover,.trail-menu a:focus-visible{color:#e4b96b;padding-left:.55rem}
+
+/* Shared section rhythm */
+.section-pad{position:relative;padding:clamp(7rem,11vw,11rem) clamp(1.5rem,7vw,7rem)}
+.project-desk,.intro,.work,.faq,.contact,.story{isolation:isolate}
+.desk-heading h2,.intro h2,.empty-project h3,.faq-heading h2,.contact h2,.story h2{margin:0;font:700 clamp(2.6rem,5.4vw,5.8rem)/.96 var(--serif);letter-spacing:-.045em}
+.desk-heading h2,.intro h2,.work h3,.faq h2,.story h2{color:var(--forest-deep)}
+.desk-heading>p:last-child,.intro>div>p,.empty-project>p,.faq-heading>p:last-child,.story-copy>p:last-child{font-size:1rem;line-height:1.75;color:#4b5149}
+
+/* Project dashboard, built around the approved illustrated icons */
+.project-desk{padding-top:clamp(12rem,17vw,16rem);padding-bottom:clamp(12rem,18vw,18rem);background:linear-gradient(to bottom,#efebde 0,#efebde 165px,rgba(239,235,222,.9) 360px,rgba(223,229,214,.92)),url("media/hero/cabin-in-the-woods-clear-1600.jpg") center 72%/cover fixed}
+.project-desk::before{content:"";position:absolute;z-index:3;left:0;right:0;top:-210px;height:340px;background:url("media/brand/woodland-floor-to-paper-v1.png") 44% 48%/cover no-repeat;pointer-events:none}
+.project-desk::after{content:none}
+.desk-heading{text-align:center;max-width:860px;margin:0 auto 4rem}
+.desk-heading h2{max-width:800px;margin-left:auto;margin-right:auto}
+.desk-heading>p:last-child{max-width:620px;margin:1.2rem auto 0}
+.desk-grid{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(2.2rem,4vw,4.8rem) clamp(1rem,3vw,3.2rem);max-width:1260px;margin:auto}
+.desk-grid::before{content:none}
+.desk-card{position:relative;min-width:0;display:grid;justify-items:center;align-content:start;text-align:center;color:var(--forest-deep)!important;text-decoration:none!important;background:none!important;border:0!important;padding:0!important;box-shadow:none!important;overflow:visible!important}
+.desk-icon{display:block;width:min(100%,250px);height:180px;background:var(--desk-icon) center/contain no-repeat;filter:drop-shadow(0 7px 5px rgba(47,37,24,.24));transition:transform .25s ease}
+.desk-card>b,.desk-card>i{display:none!important}
+.desk-card>span:nth-child(2){display:grid;justify-items:center;margin-top:.15rem;min-height:3.5rem}
+.desk-card b{font-size:1.34rem;line-height:1.05;color:var(--forest-deep)}
+.desk-card small{max-width:240px;margin-top:.4rem;font:600 .76rem/1.45 var(--sans);color:#6a5947;opacity:.78;transition:opacity .2s ease}
+.desk-card:hover .desk-icon,.desk-card:focus-visible .desk-icon{transform:translateY(-7px) scale(1.035)}
+.google-card .desk-icon,.footer-google span{filter:sepia(1) saturate(3.2) hue-rotate(342deg) brightness(.82) contrast(1.15) drop-shadow(0 7px 5px rgba(47,37,24,.24))!important}
+.google-word{display:inline-flex!important;margin:0!important;font:800 inherit var(--sans)!important}
+.google-word i{font-style:normal}
+.google-word i:nth-child(1),.google-word i:nth-child(4){color:#4285f4}.google-word i:nth-child(2),.google-word i:nth-child(6){color:#ea4335}.google-word i:nth-child(3){color:#fbbc05}.google-word i:nth-child(5){color:#34a853}
+.desk-card:hover small,.desk-card:focus-visible small{opacity:1}
+.desk-card:focus-visible{outline:2px solid var(--copper);outline-offset:10px;border-radius:12px}
+
+/* Services */
+.intro{display:grid;grid-template-columns:minmax(260px,35%) minmax(0,1fr);gap:clamp(2rem,7vw,8rem);align-items:center;padding-bottom:clamp(3rem,5vw,5rem);background:linear-gradient(to bottom,#d6dfcf 0,#d6dfcf 165px,rgba(214,223,207,.96) 360px,rgba(229,221,200,.95)),url("media/brand/supplied-pale-wood-v1.png") center/620px auto}
+.intro::before{content:"";position:absolute;z-index:3;left:0;right:0;top:-210px;height:340px;background:url("media/brand/woodland-floor-to-sage-v1.png") 58% 45%/cover no-repeat;pointer-events:none}
+.intro::after{content:none}
+.section-signet{display:grid;justify-items:center;text-align:center;color:var(--copper)}
+.section-signet>span{display:block;width:min(100%,400px);height:305px;background:var(--signet-icon) center/contain no-repeat;filter:drop-shadow(0 8px 6px rgba(43,34,24,.24))}
+.intro h2 em{font-style:normal;color:#7b4a2b}
+.intro>div>p{max-width:700px;margin:1.4rem 0 2rem}
+.wood-action{display:inline-flex!important;align-items:center;gap:1rem;border:0!important;background:none!important;padding:0!important;color:var(--forest-deep)!important;text-decoration:none!important;box-shadow:none!important}
+.wood-action .action-mark{display:block;width:190px;height:145px;margin:0!important;background:var(--action-icon) center/contain no-repeat;filter:drop-shadow(0 7px 5px rgba(46,31,19,.25));transition:transform .22s ease}
+.wood-action:hover .action-mark,.wood-action:focus-visible .action-mark{transform:translateY(-5px) scale(1.035)}
+.wood-action .action-copy{display:grid;font:700 1.35rem/1.05 var(--serif);text-align:left}
+.wood-action .action-copy small{font:600 .75rem/1.4 var(--sans);color:#6b5945;margin:.35rem 0 0!important}
+.wood-action>b{color:var(--copper);font-size:1.35rem}
+.intro .wood-action{align-items:flex-end}
+.intro .wood-action .action-mark{position:relative;width:270px;height:205px;background-position:center bottom}
+.intro .wood-action .action-mark::before,.contact .wood-action .action-mark::before{content:"";position:absolute;left:48%;bottom:42%;width:3px;height:3px;border-radius:50%;background:#e3a148;box-shadow:17px -9px 0 #c56d32,-12px -4px 0 #f0c06b,7px -20px 0 #d9863f;opacity:0;animation:emberDrift 3.6s ease-out infinite;pointer-events:none}
+.intro .wood-action .action-mark::after,.contact .wood-action .action-mark::after{content:"";position:absolute;left:44%;bottom:48%;width:32px;height:58px;border-radius:50%;background:linear-gradient(to top,rgba(214,219,207,.14),transparent 76%);filter:blur(7px);opacity:0;animation:campSmoke 4.8s ease-out infinite;pointer-events:none}
+@keyframes emberDrift{0%,18%{opacity:0;transform:translate(0,0)}25%{opacity:.72}100%{opacity:0;transform:translate(10px,-48px)}}
+@keyframes campSmoke{0%,12%{opacity:0;transform:translate(0,0) scale(.7)}28%{opacity:.35}100%{opacity:0;transform:translate(13px,-62px) scale(1.6)}}
+
+/* A useful project journey, drawn as a quiet brook rather than another boxed section. */
+.project-journey{overflow:hidden;padding-top:clamp(3rem,5vw,5rem);padding-bottom:clamp(14rem,18vw,18rem);background:linear-gradient(rgba(229,221,200,.94),rgba(231,225,209,.96)),url("media/brand/supplied-pale-wood-v1.png") center/620px auto;color:var(--forest-deep)}
+.journey-heading{max-width:920px;margin:0 auto clamp(4rem,7vw,7rem);text-align:center}
+.journey-heading h2{margin:0;font:700 clamp(2.7rem,5.2vw,5.6rem)/.96 var(--serif);letter-spacing:-.045em;color:var(--forest-deep)}
+.journey-heading h2 em{font-style:normal;color:#7b4a2b}
+.journey-heading>p:last-child{max-width:690px;margin:1.25rem auto 0;color:#4b5149}
+.process-brook{position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(.7rem,2vw,2.2rem);max-width:1420px;min-height:420px;margin:0 auto clamp(5rem,8vw,8rem);align-items:center}
+.brook-water{position:absolute;z-index:-1;inset:0;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 8px 8px rgba(34,57,50,.12))}
+.brook-bank{fill:none;stroke:rgba(63,101,99,.18);stroke-linecap:round}
+.brook-bank-a{stroke-width:84}
+.brook-bank-b{stroke:url(#brook-fill);stroke-width:68}
+.brook-shimmer{fill:none;stroke:rgba(225,241,233,.7);stroke-width:3;stroke-linecap:round;animation:brookFlow 5.5s ease-in-out infinite}
+@keyframes brookFlow{0%,100%{opacity:.25;stroke-width:2}50%{opacity:.78;stroke-width:4}}
+.process-brook article{position:relative;display:grid;justify-items:center;align-content:start;text-align:center;min-width:0;padding:0 .3rem;color:var(--forest-deep)}
+.process-brook article:nth-of-type(even){transform:translateY(52px)}
+.process-brook article>b{position:absolute;z-index:2;top:2px;left:calc(50% + 42px);display:grid;place-items:center;width:32px;height:25px;border-radius:48% 52% 45% 55%;background:#5d6f5e;color:#f0e3c6;font:700 .64rem var(--sans);letter-spacing:.08em;box-shadow:0 3px 5px rgba(36,44,34,.18)}
+.process-brook article>span{display:block;width:clamp(145px,16vw,220px);height:150px;background:var(--process-icon) center/contain no-repeat;filter:drop-shadow(0 8px 6px rgba(47,37,24,.22));transition:transform .24s ease}
+.process-brook article:hover>span{transform:translateY(-5px) scale(1.035)}
+.process-brook h3{margin:.1rem 0 .35rem;font:700 clamp(1.25rem,1.55vw,1.65rem)/1 var(--serif);color:#6d4128}
+.process-brook p{max-width:220px;margin:0;font-size:.76rem;line-height:1.55;color:#46534b}
+
+.trail-planner{position:relative;max-width:1240px;margin:0 auto;padding:clamp(2rem,4vw,4rem) clamp(1rem,4vw,4rem) 1.5rem;background:radial-gradient(ellipse at center,rgba(246,239,222,.9),rgba(246,239,222,.42) 60%,transparent 76%)}
+.planner-heading{display:grid;grid-template-columns:210px minmax(0,1fr);gap:1.5rem;align-items:center;max-width:900px;margin:0 auto 2.5rem}
+.planner-compass{display:block;width:210px;height:175px;background:url("media/brand/integrated-compass-v1.png") center/contain no-repeat;filter:drop-shadow(0 8px 6px rgba(44,34,24,.22))}
+.planner-heading h3,.planner-result h3{margin:0;font:700 clamp(2.25rem,4.2vw,4.4rem)/.96 var(--serif);letter-spacing:-.035em;color:var(--forest-deep)}
+.planner-heading>div>p:last-child{max-width:620px;margin:.8rem 0 0;color:#536057}
+.planner-progress{display:flex;justify-content:center;align-items:center;gap:2.3rem;height:26px;margin:0 auto 2rem}
+.planner-progress i{position:relative;display:block;width:15px;height:12px;border-radius:54% 46% 50% 48%;background:#8f8d7b;opacity:.38;transition:transform .25s ease,background .25s ease,opacity .25s ease}
+.planner-progress i::after{content:"";position:absolute;left:calc(100% + 8px);top:48%;width:31px;height:2px;background:linear-gradient(90deg,rgba(90,108,95,.42),transparent);transform:rotate(-7deg)}
+.planner-progress i:last-child::after{display:none}
+.planner-progress i.active{background:var(--copper);opacity:1;transform:scale(1.35)}
+.planner-step{display:none;border:0;margin:0;padding:0;min-width:0}
+.planner-step.active{display:block;animation:stepArrive .42s ease-out both}
+@keyframes stepArrive{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.planner-step legend{width:100%;margin:0 0 2rem;text-align:center;font:700 clamp(1.45rem,2.4vw,2.35rem)/1.1 var(--serif);color:#70432a}
+.planner-choices{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(.7rem,2vw,2rem);align-items:start}
+.planner-choices-four{grid-template-columns:repeat(4,minmax(0,1fr));max-width:920px;margin:auto}
+.planner-choices-five{grid-template-columns:repeat(5,minmax(0,1fr));max-width:1050px;margin:auto}
+.planner-choices button{position:relative;display:grid;justify-items:center;align-content:start;min-width:0;padding:.5rem .25rem 1rem;background:none;border:0;color:var(--forest-deep);font-family:var(--serif);cursor:pointer;border-radius:18px;outline-offset:3px}
+.planner-choices button>span:not(.trail-stone){display:block;width:100%;height:118px;background:var(--choice-icon) center/contain no-repeat;filter:drop-shadow(0 6px 4px rgba(48,37,24,.2));transition:transform .22s ease}
+.planner-choices button b{font-size:clamp(.84rem,1.2vw,1.02rem);line-height:1.15}
+.planner-choices button:hover>span:not(.trail-stone),.planner-choices button:focus-visible>span:not(.trail-stone){transform:translateY(-5px) scale(1.035)}
+.planner-choices button.selected{color:#713f25}
+.planner-choices button.selected::after{content:"";position:absolute;left:20%;right:20%;bottom:.35rem;height:4px;border-radius:50%;background:linear-gradient(90deg,transparent,var(--copper),transparent)}
+.trail-stone{display:grid;width:92px;height:68px;margin:1.4rem 0 1rem;place-items:center;border-radius:51% 49% 46% 54%;background:linear-gradient(145deg,#8d8b78,#626b61);color:#f2e5ca;font:700 1rem var(--sans);box-shadow:inset 3px 3px 9px rgba(255,255,255,.17),0 7px 8px rgba(41,45,36,.2);transition:transform .2s ease}
+.planner-choices button:hover .trail-stone,.planner-choices button:focus-visible .trail-stone{transform:translateY(-4px) rotate(-2deg)}
+.planner-controls{display:flex;justify-content:center;gap:1rem;margin-top:2rem}
+.planner-controls button,.planner-send{border:0;background:none;padding:.75rem 1rem;color:var(--forest-deep);font:700 1rem var(--serif);cursor:pointer;text-decoration:underline;text-decoration-color:var(--brass);text-decoration-thickness:3px;text-underline-offset:7px}
+.planner-controls button:disabled{opacity:.35;cursor:not-allowed}
+.planner-back{color:#6f6a5d!important;font-size:.86rem!important}
+.planner-result{grid-template-columns:240px minmax(0,1fr);gap:1.5rem;align-items:center;max-width:910px;margin:1rem auto 0}
+.planner-result:not([hidden]){display:grid;animation:stepArrive .5s ease-out both}
+.planner-result-icon{display:block;width:240px;height:190px;background:url("media/brand/integrated-fire-v1.png") center/contain no-repeat;filter:drop-shadow(0 8px 6px rgba(45,34,23,.24))}
+.planner-result p:not(.eyebrow){margin:.9rem 0;color:#4c584f}
+.planner-send{padding-left:0;color:#713f25}
+.planner-send b{color:var(--copper)}
+
+/* Work */
+.work{padding-top:clamp(13rem,18vw,17rem);background:linear-gradient(to bottom,#efebde 0,#efebde 165px,rgba(239,234,220,.84) 370px,rgba(232,227,212,.9)),url("media/brand/dawkins-social-card-v1.png") center 42%/cover no-repeat}
+.work::before{content:"";position:absolute;z-index:3;left:0;right:0;top:-210px;height:340px;background:url("media/brand/woodland-floor-to-paper-v1.png") 37% 47%/cover no-repeat;transform:scaleX(-1);pointer-events:none}
+.section-heading{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:clamp(2rem,8vw,8rem);margin:0 auto 3rem;max-width:1180px}
+.section-heading h2{margin:0;font:700 clamp(2.8rem,5.2vw,5.6rem)/.95 var(--serif);letter-spacing:-.045em;color:var(--forest-deep)}
+.section-heading h2 em{font-style:normal;color:#7b4a2b}
+.collection-link{display:inline-flex;align-items:center;gap:.5rem;border:0!important;color:var(--forest-deep)!important;text-decoration:none!important}
+.collection-link>span{position:relative;display:block;width:320px;height:235px;background:url("media/brand/integrated-camera-v1.png") center/contain no-repeat;filter:drop-shadow(0 6px 4px rgba(45,34,25,.22))}
+.collection-link>span::after,.desk-card:last-child .desk-icon::after,.story-gallery-toggle>span::after{content:"";position:absolute;left:49%;top:42%;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle,#fffbd8 0,rgba(255,230,155,.72) 18%,rgba(255,211,112,.2) 47%,transparent 70%);opacity:0;transform:translate(-50%,-50%) scale(.3);pointer-events:none}
+.collection-link:hover>span::after,.collection-link:focus-visible>span::after,.desk-card:last-child:hover .desk-icon::after,.desk-card:last-child:focus-visible .desk-icon::after,.story-gallery-toggle:hover>span::after,.story-gallery-toggle:focus-visible>span::after{animation:cameraFlash .62s ease-out 1}
+@keyframes cameraFlash{0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}18%{opacity:.9;transform:translate(-50%,-50%) scale(3.1)}100%{opacity:0;transform:translate(-50%,-50%) scale(5.2)}}
+.collection-link b{font-size:1.12rem}
+.empty-project{max-width:940px;margin:auto;text-align:center}
+.work-mark{display:block;width:410px;height:325px;margin:auto;background:url("media/brand/integrated-log-v1.png") center/contain no-repeat;filter:drop-shadow(0 8px 6px rgba(38,27,18,.24))}
+.empty-project h3{font-size:clamp(2.8rem,5.2vw,5.5rem);color:#724328}
+.empty-project>p{max-width:650px;margin:1rem auto 0}
+.work-intro{display:grid;grid-template-columns:minmax(230px,360px) minmax(0,620px);justify-content:center;align-items:center;gap:clamp(1rem,4vw,4rem);max-width:1080px;margin:0 auto 2rem}
+.work-intro .work-mark{width:100%;height:270px}
+.work-intro h3{margin:0;font:700 clamp(2.1rem,3.8vw,4rem)/.98 var(--serif);letter-spacing:-.035em;color:#724328}
+.work-intro p{margin:.9rem 0 0;max-width:540px;color:#50584f}
+.project-filters{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem 2.2rem;margin:2rem auto 3rem}
+.project-filters button{border:0;background:none;padding:.45rem .15rem;color:#586158;font:700 .78rem var(--sans);letter-spacing:.09em;text-transform:uppercase;cursor:pointer;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:3px;text-underline-offset:7px;transition:color .2s ease,text-decoration-color .2s ease}
+.project-filters button:hover,.project-filters button:focus-visible,.project-filters button.active{color:#713f25;text-decoration-color:var(--brass)}
+.project-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.1rem,2.2vw,2rem);max-width:1380px;margin:auto}
+.project-gallery figure{min-width:0;margin:0;transition:opacity .24s ease,transform .24s ease}
+.project-gallery figure.filtered-out{display:none}
+.project-gallery figure:nth-child(2),.project-gallery figure:nth-child(5){transform:translateY(2.4rem)}
+.project-gallery figure>button{position:relative;display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;overflow:hidden;border-radius:38px 13px 44px 16px;box-shadow:0 13px 28px rgba(37,43,34,.18)}
+.project-gallery figure:nth-child(even)>button{border-radius:14px 42px 17px 38px}
+.project-gallery img{display:block;width:100%;height:clamp(270px,31vw,430px);object-fit:cover;filter:saturate(1.02) contrast(1.03);transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .3s ease}
+.project-gallery figure:nth-child(3) img,.project-gallery figure:nth-child(5) img{object-position:center}
+.project-gallery figure>button:hover img,.project-gallery figure>button:focus-visible img{transform:scale(1.035);filter:saturate(1.08) contrast(1.04)}
+.project-gallery figure>button span{position:absolute;right:1rem;bottom:1rem;padding:.4rem .7rem;border-radius:999px;background:rgba(24,47,38,.86);color:#f1dfba;font:700 .67rem var(--sans);letter-spacing:.08em;text-transform:uppercase;opacity:0;transform:translateY(5px);transition:opacity .2s ease,transform .2s ease}
+.project-gallery figure>button:hover span,.project-gallery figure>button:focus-visible span{opacity:1;transform:none}
+.project-gallery figcaption{display:grid;gap:.08rem;padding:.9rem .6rem 0;color:var(--forest-deep)}
+.project-gallery figcaption b{font:700 1.25rem var(--serif)}
+.project-gallery figcaption small{font:600 .7rem var(--sans);color:#6d6658;text-transform:uppercase;letter-spacing:.1em}
+
+/* Helpful answers: unique icons, no duplicate tree strip, no hover boxes */
+.faq{padding-top:clamp(13rem,18vw,17rem);background:linear-gradient(to bottom,#d6dfcf 0,#d6dfcf 165px,rgba(226,231,218,.91) 370px,rgba(216,224,210,.94)),url("media/hero/cabin-in-the-woods-clear-1600.jpg") center 62%/cover fixed}
+.faq::before{content:"";position:absolute;z-index:3;left:0;right:0;top:-210px;height:340px;background:url("media/brand/woodland-floor-to-sage-v1.png") 64% 46%/cover no-repeat;transform:scaleX(-1);pointer-events:none}
+.faq-heading{text-align:center;max-width:750px;margin:0 auto 3.5rem}
+.faq-heading>p:last-child{margin:.9rem auto 0}
+.faq-list{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:start;gap:1.2rem;max-width:1500px;margin:auto}
+.faq-list details{min-width:0;text-align:center;background:none;border:0;overflow:visible}
+.faq-list summary{position:relative;display:grid;justify-items:center;align-content:start;min-height:245px;list-style:none;cursor:pointer;color:var(--forest-deep);font:700 clamp(.9rem,1.3vw,1.1rem)/1.25 var(--serif);outline-offset:6px}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::before{content:"";display:block;width:100%;height:165px;background-position:center;background-size:contain;background-repeat:no-repeat;filter:drop-shadow(0 7px 5px rgba(46,35,24,.22));transition:transform .23s ease}
+.faq-list details:nth-child(1) summary::before{background-image:url("media/brand/integrated-saw-v1.png")}
+.faq-list details:nth-child(2) summary::before{background-image:url("media/brand/integrated-compass-v1.png")}
+.faq-list details:nth-child(3) summary::before{background-image:url("media/brand/integrated-fire-v1.png")}
+.faq-list details:nth-child(4) summary::before{background-image:url("media/brand/integrated-blueprint-v1.png")}
+.faq-list details:nth-child(5) summary::before{background-image:url("media/brand/integrated-carpenters-v1.png")}
+.faq-list summary:hover::before,.faq-list summary:focus-visible::before{transform:translateY(-5px) scale(1.035)}
+.faq-list details:nth-child(1) summary:hover::before,.faq-list details:nth-child(1) summary:focus-visible::before{animation:sawCut .66s ease-in-out 1}
+.faq-list details:nth-child(1) summary::after{content:"";position:absolute;left:62%;top:114px;width:3px;height:3px;border-radius:50%;background:#a77743;box-shadow:7px 3px #c89a64,12px -2px #805a36;opacity:0}
+.faq-list details:nth-child(1) summary:hover::after,.faq-list details:nth-child(1) summary:focus-visible::after{animation:sawdust .72s ease-out 1}
+.faq-list details:nth-child(2) summary::after{content:"";position:absolute;left:50%;top:62px;width:2px;height:38px;background:linear-gradient(#b6673d 0 50%,#e0b86e 50%);border-radius:2px;transform-origin:50% 90%;transform:translateX(-50%) rotate(-28deg);opacity:.8}
+.faq-list details:nth-child(2) summary:hover::after,.faq-list details:nth-child(2) summary:focus-visible::after{animation:needleTurn 1.05s cubic-bezier(.22,.72,.2,1) 1}
+.faq-list details:nth-child(3) summary::after{content:"";position:absolute;left:50%;top:92px;width:3px;height:3px;border-radius:50%;background:#e6a14d;box-shadow:13px -5px #c77435,-9px 2px #f0c16b;opacity:0}
+.faq-list details:nth-child(3) summary:hover::after,.faq-list details:nth-child(3) summary:focus-visible::after{animation:sawdust 1.1s ease-out 1}
+@keyframes sawCut{0%,100%{transform:translate(0,0)}28%{transform:translate(-7px,2px)}58%{transform:translate(6px,-1px)}78%{transform:translate(-3px,1px)}}
+@keyframes sawdust{0%{opacity:0;transform:translate(0,0)}24%{opacity:.8}100%{opacity:0;transform:translate(19px,-15px)}}
+@keyframes needleTurn{0%{transform:translateX(-50%) rotate(-28deg)}55%{transform:translateX(-50%) rotate(185deg)}100%{transform:translateX(-50%) rotate(332deg)}}
+.faq-list details[open] summary::before{transform:translateY(-4px)}
+.faq-list details p{margin:.65rem auto 0;max-width:270px;padding:0;font-size:.78rem;line-height:1.55;color:#4d554d}
+
+/* Contact */
+.contact{position:relative;padding:clamp(13rem,17vw,16rem) clamp(1.5rem,7vw,7rem) clamp(14rem,18vw,18rem);text-align:center;color:#f5e7ca;background:linear-gradient(to bottom,#203c31 0,#203c31 165px,rgba(27,49,40,.82) 370px,rgba(20,41,34,.9)),url("media/hero/cabin-in-the-woods-clear-1600.jpg") center 80%/cover fixed}
+.contact::before{content:"";position:absolute;z-index:3;left:0;right:0;top:-210px;height:340px;background:url("media/brand/woodland-floor-to-forest-v1.png") 42% 48%/cover no-repeat;pointer-events:none}
+.contact::after{content:none}
+.contact .section-signet{color:#e4b86b}
+.contact .section-signet>span{width:260px;height:190px}
+.contact h2{color:#f1d69b;text-shadow:0 2px 2px rgba(20,10,4,.6)}
+.contact .wood-action{position:relative;z-index:3;margin:2.2rem auto -4rem;color:#f5e5c4!important;align-items:flex-end}
+.contact .wood-action .action-mark{position:relative;width:300px;height:225px;background-position:center bottom}
+.contact .wood-action .action-copy{color:#f2d59b}
+.contact .wood-action .action-copy small{color:#dac7a1}
+.contact-small{font:600 .92rem var(--sans);color:#ead8b7;margin:1rem 0 0}
+.contact-small a{color:#f1c978;text-decoration:none;font-size:1.08rem}
+
+/* Story */
+.story{position:relative;background:#53624f}
+.story::before{content:"";position:absolute;z-index:3;left:0;right:0;top:-210px;height:340px;background:url("media/brand/woodland-floor-to-deep-v1.png") 61% 45%/cover no-repeat;transform:scaleX(-1);pointer-events:none}
+.story-hero{min-height:clamp(620px,78vw,960px);display:flex;align-items:flex-end;padding:clamp(3rem,8vw,8rem);background:linear-gradient(to bottom,#53624f 0,#53624f 165px,rgba(83,98,79,0) 370px),linear-gradient(90deg,rgba(12,28,22,.75),rgba(12,28,22,.08) 62%),url("media/bio/dawkins-brothers-young-tractor-restored.webp") center/cover no-repeat}
+.story-copy{max-width:560px;color:#f7ead1;text-shadow:0 2px 4px #14231d}
+.story-copy .eyebrow{color:#e5b968}
+.story h2{color:#f2d8a2}
+.story h2 em{font-style:normal;color:#d98a52}
+.story-copy>p:last-child{color:#f4e7cf;font-weight:600}
+.story-gallery-toggle{position:relative;z-index:5;left:50%;transform:translateX(-50%);width:auto;display:flex;justify-content:center;align-items:center;gap:1rem;margin:-5rem 0 7rem;padding:.7rem 1rem;background:rgba(238,229,208,.9);border:0;border-radius:999px;color:var(--forest-deep);font-size:1.1rem;box-shadow:0 7px 22px rgba(18,29,23,.28)}
+.story-gallery-toggle>span{position:relative;width:85px;height:70px;background:url("media/brand/integrated-camera-v1.png") center/contain no-repeat}
+.story-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:2rem;background:var(--forest)}
+.story-gallery[hidden]{display:none}
+.story-gallery figure{margin:0;background:#f4ecd9;padding:.6rem}
+.story-gallery img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;cursor:zoom-in}
+.story-gallery figcaption{padding:.5rem;font:700 .83rem var(--serif);color:var(--forest-deep)}
+
+/* Sunrise footer. Tools sit above, not over, the engraved business beam. */
+footer{position:relative;display:block;height:770px;margin-top:-120px;padding-top:120px;overflow:visible;color:var(--forest-deep);background:url("media/brand/dawkins-social-card-v1.png") center/cover no-repeat}
+footer::before{content:none}
+footer::after{content:"";position:absolute;z-index:1;left:0;right:0;top:0;height:190px;background:linear-gradient(to bottom,#53624f 0,rgba(83,98,79,.72) 38px,rgba(83,98,79,0) 100%);pointer-events:none}
+footer .footer-tools{position:absolute;z-index:2;left:50%;bottom:245px;transform:translateX(-50%);width:min(940px,86vw);display:grid;grid-template-columns:repeat(3,1fr);align-items:end;gap:clamp(2rem,9vw,9rem)}
+.footer-tools a,.footer-tools button{display:grid;justify-items:center;text-decoration:none;color:var(--forest-deep);background:none;border:0;padding:0;filter:none!important}
+.footer-tools span{display:block;width:170px;height:145px;background:var(--footer-icon) center/contain no-repeat;filter:drop-shadow(0 7px 5px rgba(42,31,20,.3))!important;transition:transform .22s ease}
+.footer-tools a:hover span,.footer-tools a:focus-visible span,.footer-tools button:hover span,.footer-tools button:focus-visible span{transform:translateY(-5px) scale(1.035);filter:drop-shadow(0 7px 5px rgba(42,31,20,.3))!important}
+.desk-icon{position:relative}
+.desk-card:first-child:hover .desk-icon,.desk-card:first-child:focus-visible .desk-icon{animation:toolSet .56s ease-out 1}
+.desk-card:nth-child(2):hover .desk-icon,.desk-card:nth-child(2):focus-visible .desk-icon,.contact .section-signet:hover>span{animation:phoneRing .58s ease-in-out 1}
+.trail-menu summary i,.section-signet>span{position:relative}
+.trail-menu summary i::after,.intro .section-signet>span::after{content:"";position:absolute;left:61%;top:24%;width:12px;height:32px;border-radius:50%;background:linear-gradient(to top,rgba(228,230,219,.4),transparent 78%);filter:blur(4px);opacity:0;animation:iconChimney 5.8s ease-out infinite;pointer-events:none}
+@keyframes toolSet{0%,100%{transform:translateY(0)}42%{transform:translateY(5px)}68%{transform:translateY(-2px)}}
+@keyframes phoneRing{0%,100%{transform:rotate(0)}25%{transform:rotate(-2deg)}55%{transform:rotate(2deg)}78%{transform:rotate(-1deg)}}
+@keyframes iconChimney{0%,18%{opacity:0;transform:translate(0,0) scale(.7)}32%{opacity:.42}100%{opacity:0;transform:translate(9px,-30px) scale(1.5)}}
+.motion-ready .motion-item{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.motion-ready .motion-item.in-view{opacity:1;transform:none}
+.footer-tools .footer-google span,.footer-tools .footer-google:hover span,.footer-tools .footer-google:focus-visible span{filter:sepia(.85) saturate(1.7) hue-rotate(345deg) brightness(.92) contrast(1.08) drop-shadow(0 7px 5px rgba(42,31,20,.3))!important}
+.footer-tools b{font-size:1.05rem;line-height:1;color:var(--forest-deep);text-shadow:0 1px 0 rgba(255,255,255,.5)}
+.footer-facebook b{color:#1877f2}
+.footer-google b{display:flex;gap:0;font-family:var(--sans);font-weight:800}
+.footer-google b i{font-style:normal}
+.footer-google b i:nth-child(1),.footer-google b i:nth-child(4){color:#4285f4}
+.footer-google b i:nth-child(2),.footer-google b i:nth-child(6){color:#ea4335}
+.footer-google b i:nth-child(3){color:#fbbc05}
+.footer-google b i:nth-child(5){color:#34a853}
+.footer-admin b{color:#32584a}
+footer>p{position:absolute;z-index:3;left:0;right:0;bottom:14px;margin:0;text-align:center;color:#efe0bd;font:600 .74rem var(--sans);text-shadow:0 2px 3px #1e160f}
+
+/* Menus, portals and dialogs retain function but join the same palette */
+.menu-panel{background:linear-gradient(rgba(28,53,43,.96),rgba(19,40,33,.98)),url("media/brand/supplied-walnut-grain-v1.png") center/cover;color:#f4e5c3}
+.menu-panel:not(.open){display:none}
+.menu-panel .eyebrow{color:var(--brass)}
+.menu-panel>a,.menu-panel button{font-family:var(--serif);color:#f4e5c3}
+.modal{border-radius:0;background:linear-gradient(rgba(244,237,220,.95),rgba(244,237,220,.95)),url("media/brand/rough-sawn-gray-wood-wallpaper-v1.jpg") center/520px;color:var(--forest-deep)}
+.modal::backdrop{background:rgba(13,29,24,.78)}
+.modal .button-dark{background:var(--forest-deep);color:#f4e5c4}
+.trade-grid article,.dashboard-cards article,.admin-grid article,.editor{background:rgba(255,251,241,.72);border-color:rgba(68,65,50,.15)}
+.lightbox{border:0;background:#15271f;padding:1rem;max-width:min(96vw,1200px)}
+.lightbox img{display:block;max-width:90vw;max-height:82vh}
+.lightbox p{color:#f4e5c3;text-align:center}
+.lightbox-close{position:absolute;right:1rem;top:.5rem;color:white;font-size:2rem}
+
+@media (max-width:900px){
+  .hero{min-height:720px;height:100svh}
+  .trail-guide{height:112px;top:0;padding:0;width:100vw;background-size:cover;background-position:center}
+  .trail-brand{left:118px;width:calc(100% - 145px)}
+  .trail-brand strong{font-size:clamp(.92rem,3.3vw,1.45rem)}
+  .trail-brand small{font-size:.58rem;letter-spacing:.16em}
+  .trail-menu{left:4px;top:0;width:120px}
+  .trail-menu summary i{width:116px;height:94px}
+  .trail-menu summary b{font-size:.78rem;margin-top:-19px}
+  .trail-menu>div{top:108px;width:190px}
+  .hero-copy{left:6vw;right:6vw;bottom:5vh;width:auto}
+  .hero h1{font-size:clamp(3.2rem,12vw,6.3rem)}
+  .hero-intro{max-width:620px}
+  .chimney-smoke{left:68%;top:0;height:45%}
+  .desk-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:3.5rem 1rem}
+  .desk-icon{height:155px}
+  .intro{grid-template-columns:1fr;gap:2rem;text-align:center}
+  .intro>div>p{margin-left:auto;margin-right:auto}
+  .intro .wood-action{justify-content:center}
+  .process-brook{grid-template-columns:repeat(3,minmax(0,1fr));min-height:auto;gap:3.5rem 1rem}
+  .process-brook article:nth-of-type(even){transform:none}
+  .process-brook article:nth-of-type(4),.process-brook article:nth-of-type(5){left:50%}
+  .brook-water{opacity:.62}
+  .planner-choices{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem .7rem}
+  .planner-choices-four{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .planner-choices-five{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .faq-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem .8rem}
+  .faq-list details:last-child{grid-column:1/-1;max-width:340px;justify-self:center}
+  .story-gallery{grid-template-columns:1fr}
+  footer{height:640px}
+  footer .footer-tools{bottom:205px;width:92vw;gap:1rem}
+  .footer-tools span{width:135px;height:118px}
+}
+
+@media (max-width:620px){
+  body{font-size:15px}
+  .hero{min-height:680px;max-height:820px}
+  .hero-image img{object-position:55% 50%}
+  .hero-copy{bottom:4.2vh}
+  .hero h1{font-size:clamp(2.85rem,13.5vw,5rem)}
+  .hero-intro{font-size:.88rem;line-height:1.55;margin:1rem 0}
+  .hero .text-link .action-mark{width:86px;height:65px}
+  .hero .action-copy{font-size:.92rem}
+  .hero .action-copy small{font-size:.62rem}
+  .trail-guide{justify-content:flex-end;padding-left:120px;padding-right:18px}
+  .trail-brand{left:94px;width:calc(100% - 112px);text-align:right}
+  .trail-brand strong{font-size:.92rem;letter-spacing:.04em}
+  .trail-brand small{font-size:.49rem;letter-spacing:.1em}
+  .trail-menu{left:4px}
+  .chimney-smoke{left:78%;top:0;height:48%;transform:scale(.8);transform-origin:bottom left}
+  .project-desk,.faq,.contact{background-attachment:scroll}
+  .section-pad{padding-left:1.1rem;padding-right:1.1rem}
+  .desk-heading{margin-bottom:2.6rem}
+  .desk-grid{gap:2.8rem .4rem}
+  .desk-icon{height:120px}
+  .desk-card b{font-size:1rem}
+  .desk-card small{font-size:.65rem;max-width:150px}
+  .section-signet>span{height:240px}
+  .intro .wood-action{display:grid!important;justify-items:center}
+  .journey-heading h2 br{display:none}
+  .process-brook{grid-template-columns:1fr;gap:2.2rem;margin-bottom:4rem}
+  .process-brook article{grid-template-columns:120px minmax(0,1fr);grid-template-rows:auto auto;align-items:center;text-align:left;justify-items:start;max-width:420px;width:100%;margin:auto}
+  .process-brook article:nth-of-type(4),.process-brook article:nth-of-type(5){left:auto}
+  .process-brook article>b{left:89px;top:4px}
+  .process-brook article>span{grid-row:1/3;width:120px;height:105px}
+  .process-brook h3{margin:.2rem 0 .3rem}
+  .process-brook p{max-width:260px}
+  .brook-water{transform:rotate(90deg) scale(1.8,.8);opacity:.32}
+  .trail-planner{padding-left:.25rem;padding-right:.25rem}
+  .planner-heading{grid-template-columns:1fr;text-align:center}
+  .planner-compass{width:180px;height:145px;margin:auto}
+  .planner-heading>div>p:last-child{margin-left:auto;margin-right:auto}
+  .planner-choices,.planner-choices-four,.planner-choices-five{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem .35rem}
+  .planner-choices button>span:not(.trail-stone){height:100px}
+  .planner-result{grid-template-columns:1fr;text-align:center}
+  .planner-result-icon{width:200px;height:155px;margin:auto}
+  .planner-controls{flex-wrap:wrap}
+  .wood-action .action-mark{width:180px;height:140px}
+  .wood-action .action-copy{text-align:center;font-size:1.15rem}
+  .section-heading{grid-template-columns:1fr;align-items:center;justify-items:center;text-align:center}
+  .collection-link{display:grid;justify-items:center;text-align:center}
+  .collection-link>span{width:190px;height:150px}
+  .work-mark{width:300px;height:245px}
+  .work-intro{grid-template-columns:1fr;text-align:center}
+  .work-intro .work-mark{width:280px;height:215px;margin:auto}
+  .work-intro p{margin-left:auto;margin-right:auto}
+  .project-gallery{grid-template-columns:1fr;gap:2.2rem}
+  .project-gallery figure:nth-child(2),.project-gallery figure:nth-child(5){transform:none}
+  .project-gallery img{height:clamp(260px,85vw,390px)}
+  .faq-list summary{min-height:215px;font-size:.82rem}
+  .faq-list summary::before{height:145px}
+  .contact .wood-action{display:grid!important;justify-items:center}
+  .contact .wood-action .action-mark{width:210px;height:165px}
+  .story-hero{min-height:650px;padding:2rem 1.2rem;background-position:58% center}
+  .story-copy{padding:1.25rem;background:linear-gradient(90deg,rgba(15,34,27,.82),rgba(15,34,27,.25));border-radius:16px}
+  .story-gallery-toggle{width:min(92vw,390px);margin-top:-3rem;margin-bottom:6rem;font-size:.95rem}
+  footer{height:560px;background-size:auto 100%;background-position:center}
+  footer .footer-tools{bottom:150px;gap:.25rem;width:96vw}
+  .footer-tools span{width:105px;height:94px}
+  .footer-tools b{font-size:.82rem}
+  footer>p{font-size:.58rem;padding:0 1rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .motion-ready .motion-item{opacity:1!important;transform:none!important}
+}
