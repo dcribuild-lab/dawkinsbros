@@ -1,0 +1,22 @@
+name: Purge Cloudflare and Enforce HTTPS
+
+on: workflow_dispatch
+
+jobs:
+  cf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge cache and enforce settings
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ZONE_ID: a647d4ce787f33343ccf0064b5b594ae
+          DOMAIN: dawkinsbros.com
+        run: |
+          set -e
+          echo "Purging cache..."
+          curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/purge_cache" -H "Authorization: Bearer $CF_TOKEN" -H "Content-Type: application/json" --data '{"purge_everything":true}' | jq .
+          echo "Setting Always Use HTTPS..."
+          curl -s -X PATCH "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/settings/always_use_https" -H "Authorization: Bearer $CF_TOKEN" -H "Content-Type: application/json" --data '{"value":"on"}' | jq .
+          echo "Listing DNS records..."
+          curl -s -H "Authorization: Bearer $CF_TOKEN" "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records?per_page=200" | jq .
+          echo "Done."
