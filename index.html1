@@ -1,0 +1,350 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dawkins Construction LLC — Custom Home Improvement & General Contracting | Foster, RI</title>
+    <meta name="description" content="Dawkins Construction LLC provides licensed residential contracting, kitchen & bath remodels, additions, custom carpentry, and masonry in Foster, RI and surrounding areas. Call (401) 855-3705 today.">
+    
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:title" content="Dawkins Construction LLC — Foster, RI">
+    <meta property="og:description" content="Custom home remodeling, additions, 20/20 kitchen design, and expert carpentry across Rhode Island.">
+    <meta property="og:url" content="https://dawkinsbros.com">
+    <meta property="og:type" content="website">
+
+    <!-- Structured Data for AI Search Engines (GEO / Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "GeneralContractor",
+      "name": "Dawkins Construction LLC",
+      "url": "https://dawkinsbros.com",
+      "telephone": "+1-401-855-3705",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "24 Boswell Trl",
+        "addressLocality": "Foster",
+        "addressRegion": "RI",
+        "postalCode": "02825",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.8368,
+        "longitude": -71.7231
+      },
+      "areaServed": "Rhode Island",
+      "priceRange": "$$",
+      "knowsAbout": [
+        "Residential Remodeling",
+        "Kitchen Remodeling",
+        "Bathroom Remodeling",
+        "Custom Carpentry",
+        "Additions & Framing",
+        "Decks & Masonry"
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #1e293b;
+            --accent: #d97706;
+            --light-bg: #f8fafc;
+            --text-color: #334155;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        header {
+            background-color: var(--primary-dark);
+            color: #ffffff;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        header .phone-link {
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 0.6rem 1.2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            color: #e2e8f0;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--light-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 6px;
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .voice-section {
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 3rem auto;
+            text-align: center;
+        }
+
+        .voice-controls {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .voice-controls input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .voice-controls button {
+            padding: 0.8rem 1.2rem;
+            background-color: var(--accent);
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .why-us {
+            background-color: var(--light-bg);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 3rem 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 3rem 1.5rem;
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        footer {
+            background-color: var(--primary-dark);
+            color: #94a3b8;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Dawkins Construction LLC</a>
+        <a href="tel:4018553705" class="phone-link">Call: (401) 855-3705</a>
+    </header>
+
+    <section class="hero">
+        <h1>Custom Home Improvement & General Contracting</h1>
+        <p>Over 20 years of local residential expertise in Foster, RI and surrounding areas. Quality craftsmanship built to last.</p>
+        <a href="tel:4018553705" class="btn-cta">Request a Free Estimate</a>
+    </section>
+
+    <main class="container">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Kitchen & Bathroom Remodeling</h3>
+                <p>Complete interior redesigns featuring 20/20 design planning, custom tile work, vanity installs, and modern fixture upgrades.</p>
+            </div>
+            <div class="service-card">
+                <h3>Additions & Framing</h3>
+                <p>Expand your living area with structural modifications, room additions, and full residential framing extensions.</p>
+            </div>
+            <div class="service-card">
+                <h3>Finish Carpentry & Flooring</h3>
+                <p>Precision crown molding, custom trim, interior/exterior door installation, cabinetry, and tile/hardwood floor fitting.</p>
+            </div>
+            <div class="service-card">
+                <h3>Decks, Siding & Masonry</h3>
+                <p>Custom outdoor decks, weather-resistant exterior siding, and masonry structures built for New England weather.</p>
+            </div>
+            <div class="service-card">
+                <h3>Basement Finishing</h3>
+                <p>Transform unused lower-level spaces into functional home offices, living quarters, or entertainment rooms.</p>
+            </div>
+        </div>
+
+        <section class="voice-section">
+            <h3>Speak Your Project Details</h3>
+            <p>Tap the mic and tell us what project or estimate you need:</p>
+            <div class="voice-controls">
+                <input type="text" id="voiceInput" placeholder="e.g. Kitchen remodel quote in Foster RI">
+                <button id="micBtn" onclick="toggleVoiceSearch()">🎤 Speak</button>
+            </div>
+            <p id="voiceStatus" style="font-size: 0.85rem; color: #64748b; margin-top: 0.5rem;"></p>
+        </section>
+    </main>
+
+    <section class="why-us">
+        <h2>Why Dawkins Construction?</h2>
+        <div class="why-us-grid">
+            <div>
+                <h3>20+ Years Experience</h3>
+                <p>Serving homeowners across Rhode Island with dependable craftsmanship and structural integrity.</p>
+            </div>
+            <div>
+                <h3>Full Project Management</h3>
+                <p>From early concept planning through final finish work, every phase is handled cleanly and efficiently.</p>
+            </div>
+            <div>
+                <h3>Local & Reliable</h3>
+                <p>Based in Foster, RI, focused on honest client communication and lasting home value.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2>Ready to Start Your Project?</h2>
+        <div class="contact-info">
+            <p><strong>Phone:</strong> <a href="tel:4018553705">(401) 855-3705</a></p>
+            <p><strong>Location:</strong> 24 Boswell Trl, Foster, RI 02825</p>
+            <p><strong>Service Area:</strong> Rhode Island & Surrounding Communities</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Dawkins Construction LLC. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        let recognition;
+
+        if (SpeechRecognition) {
+            recognition = new SpeechRecognition();
+            recognition.continuous = false;
+            recognition.lang = 'en-US';
+
+            recognition.onstart = function() {
+                document.getElementById('voiceStatus').innerText = "Listening... Speak now.";
+                document.getElementById('micBtn').style.background = "#dc2626";
+            };
+
+            recognition.onspeechend = function() {
+                recognition.stop();
+                document.getElementById('micBtn').style.background = "#d97706";
+            };
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                document.getElementById('voiceInput').value = transcript;
+                document.getElementById('voiceStatus').innerText = `Recognized: "${transcript}"`;
+            };
+
+            recognition.onerror = function(event) {
+                document.getElementById('voiceStatus').innerText = "Voice recognition error: " + event.error;
+                document.getElementById('micBtn').style.background = "#d97706";
+            };
+        } else {
+            document.getElementById('voiceStatus').innerText = "Voice search is not supported on this browser.";
+        }
+
+        function toggleVoiceSearch() {
+            if (recognition) {
+                try {
+                    recognition.start();
+                } catch (e) {
+                    recognition.stop();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
